@@ -1,0 +1,28 @@
+# This file is where you define your pipelines. You can define multiple.
+# For more information on multiple pipelines, see the documentation:
+#   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
+  
+- pipeline.id: web-ans-001
+  path.config: "/usr/share/logstash/pipeline/web-ans-001.conf"
+  pipeline.workers: 2
+  queue.type: persisted
+
+- pipeline.id: dwh-aut-001
+  path.config: "/usr/share/logstash/pipeline/dwh-aut-001.conf"
+  pipeline.workers: 2
+  queue.type: persisted
+  
+- pipeline.id: apf-mgd-001
+  path.config: "/usr/share/logstash/pipeline/apf-mgd-001.conf"
+  pipeline.workers: 2
+  queue.type: persisted
+
+- pipeline.id: apf-mpc-001
+  path.config: "/usr/share/logstash/pipeline/apf-mpc-001.conf"
+  pipeline.workers: 2
+  queue.type: persisted
+  
+- pipeline.id: apf-mfw-001
+  path.config: "/usr/share/logstash/pipeline/apf-mfw-001.conf"
+  pipeline.workers: 2
+  queue.type: persisted
